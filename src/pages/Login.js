@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import BackBox from "../components/BackBox";
+import Button from "../components/Button";
 import Inputs from "../components/Inputs";
+
 import { loginFields } from "../constants/formField";
 
 const Login = () => {
@@ -19,10 +21,10 @@ const Login = () => {
         linkUrl="/register"
       />
 
-      <div className="w-[20rem] h-80 bg-[#FFFFFF]  rounded-[25px] ml-[50px] items-center justify-center">
-        <h1 className=" text-[#35B729] text-[22px] font-bold  ">LOG IN</h1>
+      <div className="w-[20rem] h-80 bg-[#FFFFFF]  rounded-[25px] ml-[50px] ">
+        <h1 className=" text-[#35B729] text-[22px] font-bold text-center mt-8">LOG IN</h1>
         <form>
-          <div className="py-8">
+          <div className="space-y-5 text-center mt-8 mb-4">
             {loginFields.map((field) => (
               <Inputs
                 key={field.id}
@@ -37,8 +39,10 @@ const Login = () => {
             ))}
           </div>
         </form>
-        <h1 className='text-black'>FORGET PASSWORD?</h1>
+        <h1 className='text-black text-center'>FORGET PASSWORD?</h1>
+        <Button linkName="LOG IN" linkUrl="" />
       </div>
+      
     </div>
   );
 };
