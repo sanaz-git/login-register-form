@@ -1,6 +1,6 @@
 import React from 'react';
 
-const fixedInputClass=' bg-[#F2F2F2] w-[300px] pl-2 py-2 ' 
+const fixedInputClass=' bg-[#F2F2F2] w-[280px] pl-2 py-2 ' 
 
 const Inputs = ({
     handleChange,

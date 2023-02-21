@@ -13,7 +13,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex w-[40rem] h-60 bg-[#404040] items-center justify-center text-white">
+    <div className="flex w-[40rem] h-[17rem] bg-[#404040] items-center justify-center text-white">
       <BackBox
         heading="Don't have an account?"
         paragraph="Register for great service"
@@ -21,7 +21,7 @@ const Login = () => {
         linkUrl="/register"
       />
 
-      <div className="w-[20rem] h-80 bg-[#FFFFFF]  rounded-[25px] ml-[50px] ">
+      <div className="w-[20rem] h-[22rem] bg-[#FFFFFF]  rounded-[25px] ml-[25px] ">
         <h1 className=" text-[#35B729] text-[22px] font-bold text-center mt-8">LOG IN</h1>
         <form>
           <div className="space-y-5 text-center mt-8 mb-4">
