@@ -1,20 +1,17 @@
-import './App.css';
-import BackBox from './components/BackBox';
-import Login from './components/Login';
-import Register from './components/Register';
-
+import "./App.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
-  
     <div className="flex w-full h-screen items-center justify-center">
-      <div > <BackBox/></div>
-      <div><Login/></div>
-        <div><Register/></div>
-      
-     
-     
-      
+      <Routes>
+        <Route path="/*" element={<Navigate to = "/"/> } />
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register/>} />
+      </Routes>
+ 
     </div>
   );
 }
