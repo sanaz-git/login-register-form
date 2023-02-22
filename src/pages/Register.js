@@ -9,11 +9,16 @@ const Register = () => {
 
     const handleChange=(e) => setRegisterState({...registerState,[e.target.id]:e.target.value})
 
+
+    const submitHandler = (event) => {
+      event.preventDefault();
+    }
+
   return (
     <div className=" flex w-[40rem] h-[17rem] bg-[#404040] items-center justify-center text-white">
         <div className="w-[20rem] h-[22rem] bg-[#FFFFFF]  rounded-[25px]  ">
       <h1 className=" text-[#35B729] text-[22px] font-bold text-center mt-8">REGISTER</h1>
-        <form>
+        <form onSubmit={submitHandler}>
           <div className="space-y-5 text-center mt-8 mb-4">
             {registerFields.map((field) => (
               <Inputs
