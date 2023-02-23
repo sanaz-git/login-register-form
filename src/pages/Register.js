@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import BackBox from "../components/BackBox";
-import Button from "../components/Button";
+// import Button from "../components/Button";
 import Inputs from "../components/Inputs";
-
 import { registerFields } from "../constants/formField";
+import { useDispatch } from "react-redux";
+import { register } from "../redux/auth/userSlice";
+
+
+
+
 const Register = () => {
-    const[registerState,setRegisterState]=useState({})
+
+  const[registerState,setRegisterState]=useState({})
+  const dispatch = useDispatch();
 
     const handleChange=(e) => setRegisterState({...registerState,[e.target.id]:e.target.value})
 
 
     const submitHandler = (event) => {
       event.preventDefault();
+      dispatch(register(registerState))
     }
+
 
   return (
     <div className=" flex w-[40rem] h-[17rem] bg-[#404040] items-center justify-center text-white">
@@ -33,9 +42,17 @@ const Register = () => {
               />
             ))}
           </div>
+
+          <button
+              type="submit"
+              className=" bg-[#35B729] w-[80px] text-center text-sm rounded-lg py-1 font-light mt-4 ml-4"
+            >
+           REGISTER
+            </button>
+     
         </form>
 
-        <Button linkName="REGISTER" linkUrl="" />
+        {/* <Button linkName="REGISTER" linkUrl="" /> */}
 
       </div>
       <BackBox
