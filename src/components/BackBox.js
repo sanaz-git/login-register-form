@@ -14,6 +14,7 @@ const BackBox = ({heading,paragraph,linkName,linkUrl="#"}) => {
                 {linkName}
             </Link>
             
+
         </div>
     );
 };

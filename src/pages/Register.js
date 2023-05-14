@@ -6,27 +6,24 @@ import { registerFields } from "../constants/formField";
 import { useDispatch } from "react-redux";
 import { register } from "../redux/auth/userSlice";
 
-
-
-
 const Register = () => {
-
-  const[registerState,setRegisterState]=useState({})
+  const [registerState, setRegisterState] = useState({});
   const dispatch = useDispatch();
 
-    const handleChange=(e) => setRegisterState({...registerState,[e.target.id]:e.target.value})
+  const handleChange = (e) =>
+    setRegisterState({ ...registerState, [e.target.id]: e.target.value });
 
-
-    const submitHandler = (event) => {
-      event.preventDefault();
-      dispatch(register(registerState))
-    }
-
+  const submitHandler = (event) => {
+    event.preventDefault();
+    dispatch(register(registerState));
+  };
 
   return (
     <div className=" flex w-[40rem] h-[17rem] bg-[#404040] items-center justify-center text-white">
-        <div className="w-[20rem] h-[22rem] bg-[#FFFFFF]  rounded-[25px]  ">
-      <h1 className=" text-[#35B729] text-[22px] font-bold text-center mt-8">REGISTER</h1>
+      <div className="w-[20rem] h-[22rem] bg-[#FFFFFF]  rounded-[25px]  ">
+        <h1 className=" text-[#35B729] text-[22px] font-bold text-center mt-8">
+          REGISTER
+        </h1>
         <form onSubmit={submitHandler}>
           <div className="space-y-5 text-center mt-8 mb-4">
             {registerFields.map((field) => (
@@ -44,16 +41,14 @@ const Register = () => {
           </div>
 
           <button
-              type="submit"
-              className=" bg-[#35B729] w-[80px] text-center text-sm rounded-lg py-1 font-light mt-4 ml-4"
-            >
-           REGISTER
-            </button>
-     
+            type="submit"
+            className=" bg-[#35B729] w-[80px] text-center text-sm rounded-lg py-1 font-light mt-4 ml-4"
+          >
+            REGISTER
+          </button>
         </form>
 
         {/* <Button linkName="REGISTER" linkUrl="" /> */}
-
       </div>
       <BackBox
         heading="Have an account?"
@@ -61,7 +56,6 @@ const Register = () => {
         linkName="LOG IN"
         linkUrl="/login"
       />
-      
     </div>
   );
 };
